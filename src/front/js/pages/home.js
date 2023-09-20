@@ -1,26 +1,21 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div className="alert alert-info">
-				{store.message || "Loading message from the backend (make sure your python backend is running)..."}
-			</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://start.4geeksacademy.com/starters/react-flask">
-					Read documentation
-				</a>
-			</p>
-		</div>
+		<div>
+        <div className="container h-100">
+            <div className="row h-100">
+                <div className="col-12 text-center">
+                    <h1 className="display-3">Welcome to this super login app!</h1>
+                    <p><Link to="/login" className="btn btn-success">Login</Link> | <Link to="/signup" className="btn btn-success">Register</Link> </p>
+                </div>
+            </div>
+        </div>
+    </div>
 	);
 };
